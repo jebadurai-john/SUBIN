@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 5th Birthday - Celebration of Joy</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&family=Fredoka+One&family=Quicksand:wght@400;600&family=Montserrat+Alternates:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;500;600&family=Noto+Sans+Kannada:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #FFD700;
+            --secondary-gold: #FFEC8B;
+            --pastel-blue: #87CEEB;
+            --pastel-pink: #FFB6C1;
+            --pastel-purple: #DDA0DD;
+            --pastel-green: #98FB98;
+            --soft-white: #FFF8F0;
+            --shadow-light: rgba(255, 215, 0, 0.2);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-deep: rgba(0, 0, 0, 0.25);
+            --animation-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .animated-background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-balloon {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            border-radius: 50%;
+            bottom: -150px;
+            opacity: 0.8;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+            animation: balloonFloat 25s linear infinite;
+        }
+
+        .balloon-string {
+            position: absolute;
+            width: 2px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.7);
+            bottom: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            opacity: 0.6;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+            animation: floatIcon 20s infinite linear;
+        }
+
+        .floating-star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFD700'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+            opacity: 0;
+            animation: twinkleStar 3s infinite ease-in-out;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: pageLoad 1.5s var(--animation-smooth) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .main-header {
+            text-align: center;
+            margin-bottom: 40px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-title {
+            font-family: 'Chewy', cursive;
+            font-size: 5rem;
+            background: linear-gradient(45deg, var(--primary-gold), var(--pastel-pink), var(--pastel-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            animation: titleGlow 3s infinite alternate;
+        }
+
+        .header-subtitle {
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 1.8rem;
+            color: var(--secondary-gold);
+            letter-spacing: 3px;
+            font-weight: 400;
+            position: relative;
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        .header-subtitle:before,
+        .header-subtitle:after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            animation: sparkle 2s infinite;
+        }
+
+        .header-subtitle:before { left: 0; }
+        .header-subtitle:after { right: 0; }
+
+        .celebration-card {
+            display: flex;
+            flex-wrap: wrap;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(20px);
+            border-radius: 35px;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 1300px;
+            width: 100%;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            animation: cardAppear 1s 0.5s var(--animation-smooth) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* UPDATED: Photo Section for Mobile */
+        .photo-section {
+            flex: 1 1 600px;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 35px 0 0 35px;
+        }
+
+        .photo-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background: linear-gradient(45deg, rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8));
+        }
+
+        .photo-frame {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 15px rgba(255, 215, 0, 0.1);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* UPDATED: Mobile-friendly image display */
+        .birthday-photo {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain !important; /* Force contain for mobile */
+            background-color: rgba(26, 26, 46, 0.5); /* Background for empty space */
+            opacity: 0;
+            transform: scale(1.1) translateZ(-20px);
+            transition: all 2s var(--animation-smooth);
+            filter: brightness(1.05);
+        }
+
+        .birthday-photo.active {
+            opacity: 1;
+            transform: scale(1) translateZ(0);
+        }
+
+        .photo-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            box-shadow: 
+                0 0 80px rgba(255, 215, 0, 0.3),
+                inset 0 0 60px rgba(255, 215, 0, 0.1);
+            pointer-events: none;
+            opacity: 0;
+            z-index: 5;
+            animation: gentleGlow 4s infinite alternate;
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
+            z-index: 10;
+            animation: captionFloat 6s infinite ease-in-out;
+            padding: 0 10px;
+            background: rgba(0, 0, 0, 0.3); /* Better visibility */
+            backdrop-filter: blur(5px);
+            margin: 0 20px;
+            border-radius: 10px;
+        }
+
+        .info-section {
+            flex: 1 1 600px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+        }
+
+        .birthday-boy {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .birthday-name {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4rem;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            position: relative;
+            display: inline-block;
+        }
+
+        .birthday-age {
+            font-family: 'Chewy', cursive;
+            font-size: 3.5rem;
+            color: white;
+            background: linear-gradient(45deg, var(--pastel-pink), var(--pastel-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: block;
+            margin-top: 10px;
+            animation: agePulse 2s infinite;
+        }
+
+        .birthday-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s var(--animation-smooth);
+            position: relative;
+            overflow: hidden;
+            animation: cardFloat 6s infinite ease-in-out;
+        }
+
+        .detail-card:nth-child(2) { animation-delay: 1s; }
+        .detail-card:nth-child(3) { animation-delay: 2s; }
+        .detail-card:nth-child(4) { animation-delay: 3s; }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 15px 30px rgba(0, 0, 0, 0.3),
+                0 0 0 2px var(--primary-gold);
+        }
+
+        .detail-icon {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: iconBounce 2s infinite;
+        }
+
+        .detail-card h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.2rem;
+            color: var(--secondary-gold);
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .detail-card p {
+            font-size: 1.6rem;
+            color: white;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .bible-section {
+            background: linear-gradient(145deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9));
+            border-radius: 25px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: sectionAppear 1s 1s var(--animation-smooth) forwards;
+            opacity: 0;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        .bible-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, 
+                var(--primary-gold), 
+                var(--pastel-pink), 
+                var(--pastel-blue),
+                var(--pastel-green),
+                var(--pastel-purple),
+                var(--primary-gold));
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite linear;
+        }
+
+        .quote-header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .quote-header h2 {
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .quote-header h2:before,
+        .quote-header h2:after {
+            content: '✧';
+            font-size: 1.5rem;
+            animation: spin 6s infinite linear;
+        }
+
+        .quote-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+            min-height: 250px;
+        }
+
+        .language-quote-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: languageCardFloat 8s infinite ease-in-out;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 200px;
+        }
+
+        .language-quote-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .language-quote-card:nth-child(2) { animation-delay: 1s; }
+        .language-quote-card:nth-child(3) { animation-delay: 2s; }
+
+        .language-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .language-flag {
+            font-size: 1.8rem;
+            min-width: 35px;
+            text-align: center;
+        }
+
+        .language-name {
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quote-text {
+            line-height: 1.6;
+            font-style: italic;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.3rem !important;
+        }
+
+        .quote-text:before {
+            content: '"';
+            font-size: 2.5rem;
+            color: rgba(255, 215, 0, 0.2);
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-family: 'Times New Roman', serif;
+            line-height: 1;
+        }
+
+        .quote-text:after {
+            content: '"';
+            font-size: 2.5rem;
+            color: rgba(255, 215, 0, 0.2);
+            position: absolute;
+            bottom: -5px;
+            right: 5px;
+            font-family: 'Times New Roman', serif;
+            line-height: 1;
+        }
+
+        .language-quote-card.english .quote-text {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        .language-quote-card.tamil .quote-text {
+            font-family: 'Noto Sans Tamil', sans-serif;
+            font-size: 1.4rem;
+            color: #FFEC8B;
+            line-height: 1.7;
+        }
+
+        .language-quote-card.kannada .quote-text {
+            font-family: 'Noto Sans Kannada', sans-serif;
+            font-size: 1.4rem;
+            color: #98FB98;
+            line-height: 1.7;
+        }
+
+        .quote-reference {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--secondary-gold);
+            font-weight: 600;
+            padding-top: 15px;
+            margin-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-style: italic;
+            grid-column: 1 / -1;
+        }
+
+        .quote-reference:before {
+            content: '— ';
+            margin-right: 5px;
+        }
+
+        .countdown-section {
+            width: 100%;
+            max-width: 1300px;
+            margin-bottom: 40px;
+            animation: sectionAppear 1s 1.2s var(--animation-smooth) forwards;
+            opacity: 0;
+            order: -1;
+        }
+
+        .countdown-title {
+            text-align: center;
+            font-family: 'Chewy', cursive;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .countdown-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            border-radius: 2px;
+        }
+
+        .countdown-timer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .time-unit {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 25px;
+            padding: 35px 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s var(--animation-smooth);
+            animation: unitFloat 4s infinite ease-in-out;
+        }
+
+        .time-unit:nth-child(2) { animation-delay: 0.5s; }
+        .time-unit:nth-child(3) { animation-delay: 1s; }
+        .time-unit:nth-child(4) { animation-delay: 1.5s; }
+
+        .time-unit:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 3px var(--primary-gold);
+        }
+
+        .time-unit:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--pastel-pink), var(--pastel-blue), var(--pastel-green));
+            animation: shimmer 2s infinite;
+        }
+
+        .time-number {
+            font-family: 'Fredoka One', cursive;
+            font-size: 4.5rem;
+            color: var(--primary-gold);
+            line-height: 1;
+            margin-bottom: 15px;
+            text-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+
+        .time-number:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .time-label {
+            font-size: 1.3rem;
+            color: var(--secondary-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .celebration-mode {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+            animation: celebrationEnter 0.5s var(--animation-smooth) forwards;
+        }
+
+        .celebration-active .celebration-mode {
+            display: block;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            top: -20px;
+            opacity: 0;
+            animation: confettiRain 5s linear infinite;
+            transform-origin: center;
+        }
+
+        .celebration-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 240, 0.95));
+            padding: 50px 70px;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.5),
+                0 0 0 20px rgba(255, 215, 0, 0.3);
+            z-index: 1001;
+            pointer-events: none;
+            border: 3px solid var(--primary-gold);
+        }
+
+        .celebration-active .celebration-message {
+            animation: messageBounce 0.8s 0.5s var(--animation-smooth) forwards;
+        }
+
+        .celebration-message h2 {
+            font-family: 'Chewy', cursive;
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, #FF0000, #FF8C00, #FFD700, #008000, #0000FF, #4B0082);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+            animation: rainbowText 3s infinite linear;
+        }
+
+        .celebration-message p {
+            font-size: 2.2rem;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .celebration-verse {
+            font-size: 1.5rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 25px;
+            border-top: 2px dashed var(--primary-gold);
+            padding-top: 20px;
+        }
+
+        .celebration-footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 1300px;
+            animation: fadeIn 1s 1.5s forwards;
+            opacity: 0;
+        }
+
+        /* Animations */
+        @keyframes pageLoad {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes cardAppear {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes sectionAppear {
+            to { opacity: 1; }
+        }
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 5px 15px rgba(255, 215, 0, 0.3)); }
+            50% { filter: drop-shadow(0 5px 25px rgba(255, 215, 0, 0.6)); }
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.5; transform: translateY(-50%) scale(1); }
+            50% { opacity: 1; transform: translateY(-50%) scale(1.3); }
+        }
+        @keyframes balloonFloat {
+            0% { bottom: -150px; transform: translateX(0) rotate(0deg); }
+            100% { bottom: 100vh; transform: translateX(100px) rotate(360deg); }
+        }
+        @keyframes floatIcon {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 0.7; }
+            100% { transform: translateY(0) rotate(360deg); opacity: 0.3; }
+        }
+        @keyframes twinkleStar {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        @keyframes gentleGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        @keyframes captionFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes agePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes languageCardFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: 200px 0; }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes unitFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes celebrationEnter {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes confettiRain {
+            0% { top: -20px; opacity: 1; transform: rotate(0deg) scale(1); }
+            100% { top: 100vh; opacity: 0; transform: rotate(720deg) scale(0.5); }
+        }
+        @keyframes messageBounce {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+            70% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+        @keyframes rainbowText {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 1200px) {
+            .header-title { font-size: 4rem; }
+            .birthday-name { font-size: 3.5rem; }
+            .birthday-age { font-size: 3rem; }
+            .photo-section { min-height: 500px; }
+        }
+
+        @media (max-width: 992px) {
+            .celebration-card { flex-direction: column; }
+            .photo-section { 
+                min-height: 500px;
+                border-radius: 35px 35px 0 0;
+            }
+            .photo-container { padding: 30px; }
+            .info-section { padding: 40px 30px; }
+            .header-title { font-size: 3.5rem; }
+            .birthday-name { font-size: 3.2rem; }
+            .birthday-age { font-size: 2.8rem; }
+            .photo-caption { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px 15px; }
+            .header-title { 
+                font-size: 3rem;
+                line-height: 1.2;
+                margin-bottom: 10px;
+            }
+            .header-subtitle { 
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+                padding: 0 15px;
+            }
+            .birthday-name { 
+                font-size: 2.8rem;
+                margin-bottom: 10px;
+            }
+            .birthday-age { 
+                font-size: 2.4rem;
+                margin-top: 5px;
+            }
+            .photo-section { 
+                min-height: 400px;
+            }
+            .photo-container {
+                padding: 20px;
+            }
+            .photo-frame {
+                border-radius: 20px;
+                box-shadow: 
+                    0 15px 30px rgba(0, 0, 0, 0.4),
+                    0 0 0 10px rgba(255, 215, 0, 0.1);
+            }
+            .photo-caption {
+                font-size: 1.6rem;
+                bottom: 15px;
+                margin: 0 15px;
+                padding: 8px;
+            }
+            .birthday-details {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .detail-card {
+                padding: 20px 15px;
+            }
+            .detail-card p {
+                font-size: 1.4rem;
+            }
+            .countdown-title {
+                font-size: 2.2rem;
+                margin-bottom: 30px;
+            }
+            .countdown-timer {
+                gap: 15px;
+            }
+            .time-unit {
+                padding: 25px 15px;
+            }
+            .time-number {
+                font-size: 3.5rem;
+            }
+            .quote-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .language-quote-card {
+                min-height: 180px;
+            }
+            .quote-text {
+                font-size: 1.2rem !important;
+            }
+            .bible-section {
+                padding: 20px;
+            }
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 576px) {
+            .container { 
+                padding: 15px 10px;
+            }
+            .header-title { 
+                font-size: 2.5rem;
+            }
+            .header-subtitle { 
+                font-size: 1.3rem;
+            }
+            .celebration-card {
+                border-radius: 25px;
+                margin-bottom: 30px;
+            }
+            .photo-section {
+                min-height: 350px;
+                border-radius: 25px 25px 0 0;
+            }
+            .photo-container {
+                padding: 15px;
+            }
+            .birthday-photo {
+                object-fit: contain !important;
+                background-color: rgba(26, 26, 46, 0.7);
+            }
+            .photo-caption {
+                font-size: 1.4rem;
+                bottom: 10px;
+                margin: 0 10px;
+                padding: 6px;
+            }
+            .info-section {
+                padding: 30px 20px;
+                border-radius: 0 0 25px 25px;
+            }
+            .birthday-boy {
+                margin-bottom: 30px;
+            }
+            .birthday-name {
+                font-size: 2.3rem;
+            }
+            .birthday-age {
+                font-size: 2rem;
+            }
+            .birthday-details {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .detail-card {
+                padding: 20px;
+            }
+            .detail-icon {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+            }
+            .detail-card h3 {
+                font-size: 1.1rem;
+            }
+            .detail-card p {
+                font-size: 1.3rem;
+            }
+            .countdown-section {
+                margin-bottom: 30px;
+            }
+            .countdown-title {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            .countdown-timer {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .time-unit {
+                padding: 20px 10px;
+                border-radius: 20px;
+            }
+            .time-number {
+                font-size: 3rem;
+            }
+            .time-label {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+            .bible-section {
+                padding: 20px 15px;
+                border-radius: 20px;
+                margin-top: 25px;
+            }
+            .quote-header h2 {
+                font-size: 1.6rem;
+            }
+            .language-quote-card {
+                padding: 15px;
+                min-height: 160px;
+            }
+            .quote-text {
+                font-size: 1.1rem !important;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .header-title { font-size: 2.2rem; }
+            .header-subtitle { font-size: 1.2rem; }
+            .birthday-name { font-size: 2rem; }
+            .birthday-age { font-size: 1.8rem; }
+            .photo-section { min-height: 300px; }
+            .photo-caption { font-size: 1.3rem; }
+        }
+
+        /* Landscape Mode */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .container {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .photo-section {
+                min-height: 300px;
+            }
+            .header-title {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background" id="animatedBackground"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <h1 class="header-title">Happy 5th Birthday!</h1>
+            <h2 class="header-subtitle">A Celebration of God's Blessings</h2>
+        </header>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-section">
+            <h2 class="countdown-title">Countdown to Celebration</h2>
+            <div class="countdown-timer">
+                <div class="time-unit">
+                    <div class="time-number" id="days">00</div>
+                    <div class="time-label">Days</div>
+                </div>
+                <div class="time-unit">
+                    <div class="time-number" id="hours">00</div>
+                    <div class="time-label">Hours</div>
+                </div>
+                <div class="time-unit">
+                    <div class="time-number" id="minutes">00</div>
+                    <div class="time-label">Minutes</div>
+                </div>
+                <div class="time-unit">
+                    <div class="time-number" id="seconds">00</div>
+                    <div class="time-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Celebration Card -->
+        <div class="celebration-card">
+            <!-- Photo Section -->
+            <div class="photo-section">
+                <div class="photo-container">
+                    <div class="photo-frame">
+                        <!-- Photos will be added by JavaScript -->
+                        <div class="photo-glow"></div>
+                        <div class="photo-caption">Our Blessed Boy Turns 5!</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information Section -->
+            <div class="info-section">
+                <!-- Birthday Boy -->
+                <div class="birthday-boy">
+                    <h2 class="birthday-name">S.K Subin</h2>
+                    <span class="birthday-age">Turning 5 Years Old!</span>
+                </div>
+
+                <!-- Birthday Details -->
+                <div class="birthday-details">
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <h3>Celebration</h3>
+                        <p>5th Birthday Party</p>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Date</h3>
+                        <p>February 1, 2026</p>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Time</h3>
+                        <p>09:00 AM Onwards</p>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Grace A.G Church<br>Laggere, Bangalore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BIBLE QUOTES SECTION -->
+        <div class="bible-section">
+            <div class="quote-header">
+                <h2><i class="fas fa-bible"></i> Bible Blessings <i class="fas fa-cross"></i></h2>
+            </div>
+            <div class="quote-container" id="quoteContainer"></div>
+            <div class="quote-reference" id="quoteReference"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="celebration-footer">
+            <p>With love and prayers from family and friends ❤️ | May God's blessings be upon you always</p>
+            <p style="margin-top: 10px; font-size: 1rem; opacity: 0.5;">
+                <i class="fas fa-heart" style="color: #FFB6C1;"></i> Designed with love for our 5-year-old blessing
+            </p>
+        </footer>
+    </div>
+
+    <!-- Celebration Mode -->
+    <div class="celebration-mode" id="celebrationMode">
+        <div class="celebration-message">
+            <h2>🎉 The Celebration Has Begun! 🎉</h2>
+            <p>Happy 5th Birthday, SK Subin!</p>
+            <div class="celebration-verse">
+                "The Lord bless you and keep you"<br>
+                Numbers 6:24
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // CONFIGURATION SECTION
+        // ============================================
+        
+        // Birthday Configuration
+        const CONFIG = {
+            birthdayDate: new Date('February 1, 2026 09:00:00').getTime(),
+            birthdayBoy: "S.K Subin",
+            partyDetails: {
+                date: "February 1, 2026",
+                time: "09:00 AM Onwards",
+                location: "Grace A.G Church, Laggere, Bangalore"
+            }
+        };
+        
+        // FIXED GOOGLE DRIVE IMAGE LINKS - Using direct image links
+        const BIRTHDAY_PHOTOS = [
+            "https://lh3.googleusercontent.com/d/1WdSm9DauY005ttOHZ6nJmUCPuVb20V4V=w1000?authuser=0",
+            "https://lh3.googleusercontent.com/d/1A4HaXa8KJEfR9unLo7s28Wb5jKAOPOh5=w1000?authuser=0",
+            "https://lh3.googleusercontent.com/d/1yYIpnwXm53A5yg1_AFCCsA9ldHhQKW-J=w1000?authuser=0",
+            "https://lh3.googleusercontent.com/d/1B0KGI_IkO6YJPNH724iGZHPE5Ps3FBS5=w1000?authuser=0",
+            "https://lh3.googleusercontent.com/d/1u7pjeXDmM0O3zTr0yn_opPGRbR0AoGkQ=w1000?authuser=0",
+            "https://lh3.googleusercontent.com/d/1Y-e-D3eixfIgc-uYjuX2Slwl2b2Z_jQn=w1000?authuser=0",
+            "https://lh3.googleusercontent.com/d/1hrIBDGZbqvRMeQc5ob_e55Ad31Zrz5Nv=w1000?authuser=0",
+            "https://lh3.googleusercontent.com/d/1XqKcWNbco4sCDWo5DhyFUV2Un9XJowHh=w1000?authuser=0"
+        ];
+        
+        // Backup images in case Google Drive fails
+        const BACKUP_IMAGES = [
+            "https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1568889072763-ddc4b7d6d8b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1579208045315-4d5e66f80c4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+            "https://images.unsplash.com/photo-1579208045315-4d5e66f80c4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+        ];
+        
+        // Bible Quotes
+        const BIBLE_QUOTE = {
+            theme: "Grace and Peace",
+            reference: "2 Peter 1:2",
+            quotes: [
+               
+                {
+                    language: "Tamil",
+                    flag: "🇮🇳",
+                    text: "தேவனைப் பற்றியும், நம்முடைய கர்த்தராகிய இயேசுவைப் பற்றியும் அறிகிற அறிவின் மூலமாக, கிருபையும் சமாதானமும் உங்களுக்குப் பெருகக்கடவது."
+                },
+                {
+                    language: "Kannada",
+                    flag: "🇮🇳",
+                    text: "ದೇವರ ಮತ್ತು ನಮ್ಮ ಕರ್ತನಾದ ಯೇಸುವಿನ ಜ್ಞಾನದ ಮೂಲಕ ನಿಮಗೆ ಕೃಪೆಯೂ ಶಾಂತಿಯೂ ಹೆಚ್ಚಾಗಲಿ."
+                }, {
+                    language: "English",
+                    flag: "IN",
+                    text: "Grace and peace be multiplied unto you through the knowledge of God, and of Jesus our Lord."
+                },
+            ]
+        };
+        
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        
+        // DOM Elements
+        const animatedBackground = document.getElementById('animatedBackground');
+        const photoFrame = document.querySelector('.photo-frame');
+        const quoteContainer = document.getElementById('quoteContainer');
+        const quoteReference = document.getElementById('quoteReference');
+        const countdownDays = document.getElementById('days');
+        const countdownHours = document.getElementById('hours');
+        const countdownMinutes = document.getElementById('minutes');
+        const countdownSeconds = document.getElementById('seconds');
+        const celebrationMode = document.getElementById('celebrationMode');
+        const body = document.body;
+        
+        // State Variables
+        let currentPhotoIndex = 0;
+        let countdownInterval;
+        let isCelebrationActive = false;
+        let imagesLoaded = 0;
+        
+        // ============================================
+        // BACKGROUND ANIMATIONS
+        // ============================================
+        
+        function createAnimatedBackground() {
+            // Create floating balloons
+            for (let i = 0; i < 8; i++) {
+                createBalloon();
+            }
+            
+            // Create floating icons
+            createFloatingIcons();
+            
+            // Create twinkling stars
+            createTwinklingStars();
+        }
+        
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.className = 'floating-balloon';
+            
+            const colors = [
+                'radial-gradient(circle at 30% 30%, #FF6B6B, #EE5A52)',
+                'radial-gradient(circle at 30% 30%, #48DBFB, #0ABDE3)',
+                'radial-gradient(circle at 30% 30%, #FFD700, #FFA500)',
+                'radial-gradient(circle at 30% 30%, #98FB98, #32CD32)',
+                'radial-gradient(circle at 30% 30%, #DDA0DD, #DA70D6)'
+            ];
+            
+            const left = Math.random() * 100;
+            const delay = Math.random() * 25;
+            const duration = 20 + Math.random() * 15;
+            const size = 60 + Math.random() * 40;
+            
+            balloon.style.left = `${left}vw`;
+            balloon.style.animationDelay = `${delay}s`;
+            balloon.style.animationDuration = `${duration}s`;
+            balloon.style.width = `${size}px`;
+            balloon.style.height = `${size * 1.25}px`;
+            balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            const string = document.createElement('div');
+            string.className = 'balloon-string';
+            balloon.appendChild(string);
+            
+            animatedBackground.appendChild(balloon);
+        }
+        
+        function createFloatingIcons() {
+            const icons = [
+                'fas fa-birthday-cake',
+                'fas fa-gift',
+                'fas fa-heart',
+                'fas fa-star',
+                'fas fa-crown',
+                'fas fa-music',
+                'fas fa-balloon',
+                'fas fa-candy-cane'
+            ];
+            
+            icons.forEach((iconClass, index) => {
+                const icon = document.createElement('i');
+                icon.className = `floating-icon ${iconClass}`;
+                
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = 15 + Math.random() * 10;
+                
+                icon.style.left = `${left}vw`;
+                icon.style.top = `${top}vh`;
+                icon.style.animationDelay = `${delay}s`;
+                icon.style.animationDuration = `${duration}s`;
+                
+                const colors = ['#FFD700', '#87CEEB', '#FFB6C1', '#98FB98', '#DDA0DD'];
+                icon.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                animatedBackground.appendChild(icon);
+            });
+        }
+        
+        function createTwinklingStars() {
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'floating-star';
+                
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                const delay = Math.random() * 3;
+                const duration = 2 + Math.random() * 2;
+                const size = 10 + Math.random() * 20;
+                
+                star.style.left = `${left}vw`;
+                star.style.top = `${top}vh`;
+                star.style.animationDelay = `${delay}s`;
+                star.style.animationDuration = `${duration}s`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                animatedBackground.appendChild(star);
+            }
+        }
+        
+        // ============================================
+        // PHOTO SLIDESHOW - FIXED FOR MOBILE
+        // ============================================
+        
+        function initializePhotoSlideshow() {
+            const existingPhotos = photoFrame.querySelectorAll('.birthday-photo');
+            existingPhotos.forEach(photo => photo.remove());
+            
+            // Use Google Drive photos
+            BIRTHDAY_PHOTOS.forEach((photoUrl, index) => {
+                const img = document.createElement('img');
+                img.loading = "lazy";
+                img.decoding = "async";
+                img.className = 'birthday-photo';
+                img.alt = `${CONFIG.birthdayBoy} - Birthday Photo ${index + 1}`;
+                
+                // Set source with error handling
+                img.src = photoUrl;
+                
+                // Force contain for mobile
+                if (window.innerWidth <= 768) {
+                    img.style.objectFit = 'contain';
+                }
+                
+                // Error handling for Google Drive images
+                img.onerror = function() {
+                    console.log(`Failed to load Google Drive image ${index + 1}, using backup`);
+                    this.src = BACKUP_IMAGES[index] || BACKUP_IMAGES[0];
+                    this.onerror = null;
+                };
+                
+                img.onload = function() {
+                    imagesLoaded++;
+                    console.log(`Image ${index + 1} loaded successfully`);
+                    
+                    // Set first image as active
+                    if (index === 0) {
+                        setTimeout(() => {
+                            img.classList.add('active');
+                        }, 300);
+                    }
+                };
+                
+                photoFrame.insertBefore(img, photoFrame.firstChild);
+            });
+            
+            // Start slideshow rotation
+            setTimeout(() => {
+                setInterval(rotatePhoto, 5000);
+            }, 3000);
+        }
+        
+        function rotatePhoto() {
+            const allPhotos = photoFrame.querySelectorAll('.birthday-photo');
+            
+            if (allPhotos.length === 0) return;
+            
+            allPhotos[currentPhotoIndex].classList.remove('active');
+            currentPhotoIndex = (currentPhotoIndex + 1) % allPhotos.length;
+            allPhotos[currentPhotoIndex].classList.add('active');
+        }
+        
+        // ============================================
+        // BIBLE QUOTES
+        // ============================================
+        
+        function initializeBibleQuote() {
+            quoteContainer.innerHTML = '';
+            
+            BIBLE_QUOTE.quotes.forEach((quote, index) => {
+                const quoteCard = document.createElement('div');
+                quoteCard.className = `language-quote-card ${quote.language.toLowerCase()}`;
+                
+                quoteCard.innerHTML = `
+                    <div class="language-header">
+                        <div class="language-flag">${quote.flag}</div>
+                        <div class="language-name">${quote.language}</div>
+                    </div>
+                    <div class="quote-text">${quote.text}</div>
+                `;
+                
+                quoteContainer.appendChild(quoteCard);
+            });
+            
+            quoteReference.textContent = BIBLE_QUOTE.reference;
+        }
+        
+        // ============================================
+        // COUNTDOWN TIMER
+        // ============================================
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeRemaining = CONFIG.birthdayDate - now;
+            
+            if (timeRemaining <= 0) {
+                clearInterval(countdownInterval);
+                countdownDays.textContent = '00';
+                countdownHours.textContent = '00';
+                countdownMinutes.textContent = '00';
+                countdownSeconds.textContent = '00';
+                
+                if (!isCelebrationActive) {
+                    activateCelebrationMode();
+                }
+                return;
+            }
+            
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            
+            countdownDays.textContent = days < 10 ? '0' + days : days;
+            countdownHours.textContent = hours < 10 ? '0' + hours : hours;
+            countdownMinutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+            countdownSeconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+        }
+        
+        // ============================================
+        // CELEBRATION MODE
+        // ============================================
+        
+        function activateCelebrationMode() {
+            isCelebrationActive = true;
+            body.classList.add('celebration-active');
+            createEnhancedConfetti();
+            updateCelebrationContent();
+        }
+        
+        function createEnhancedConfetti() {
+            const shapes = ['circle', 'square', 'triangle', 'star'];
+            
+            for (let i = 0; i < 200; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                
+                const left = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = 3 + Math.random() * 4;
+                const size = 8 + Math.random() * 12;
+                const shape = shapes[Math.floor(Math.random() * shapes.length)];
+                
+                confetti.style.left = `${left}vw`;
+                confetti.style.animationDelay = `${delay}s`;
+                confetti.style.animationDuration = `${duration}s`;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.animation = `confettiRain ${duration}s ${delay}s linear infinite`;
+                
+                const colors = [
+                    '#FF0000', '#FF8C00', '#FFD700', '#008000', 
+                    '#0000FF', '#4B0082', '#EE82EE', '#FF69B4'
+                ];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                switch(shape) {
+                    case 'circle':
+                        confetti.style.borderRadius = '50%';
+                        confetti.style.background = color;
+                        break;
+                    case 'square':
+                        confetti.style.borderRadius = '0';
+                        confetti.style.background = color;
+                        break;
+                    case 'triangle':
+                        confetti.style.width = '0';
+                        confetti.style.height = '0';
+                        confetti.style.background = 'transparent';
+                        confetti.style.borderLeft = `${size/2}px solid transparent`;
+                        confetti.style.borderRight = `${size/2}px solid transparent`;
+                        confetti.style.borderBottom = `${size}px solid ${color}`;
+                        break;
+                    case 'star':
+                        confetti.style.background = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='${color.replace('#', '%23')}'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E") no-repeat center`;
+                        confetti.style.backgroundSize = 'contain';
+                        break;
+                }
+                
+                celebrationMode.appendChild(confetti);
+            }
+        }
+        
+        function updateCelebrationContent() {
+            const headerTitle = document.querySelector('.header-title');
+            const headerSubtitle = document.querySelector('.header-subtitle');
+            const countdownTitle = document.querySelector('.countdown-title');
+            const photoCaption = document.querySelector('.photo-caption');
+            
+            headerTitle.textContent = "🎉 Celebration Time! 🎉";
+            headerSubtitle.textContent = "The Party Has Started!";
+            countdownTitle.textContent = "🎂 Party in Progress! 🎂";
+            photoCaption.textContent = "Happy 5th Birthday! 🎈";
+            
+            countdownDays.textContent = "CE";
+            countdownHours.textContent = "LE";
+            countdownMinutes.textContent = "BR";
+            countdownSeconds.textContent = "ATE";
+            
+            const timeLabels = document.querySelectorAll('.time-label');
+            timeLabels[0].textContent = "JOY";
+            timeLabels[1].textContent = "LOVE";
+            timeLabels[2].textContent = "PEACE";
+            timeLabels[3].textContent = "BLESS";
+            
+            const detailCards = document.querySelectorAll('.detail-card');
+            if (detailCards.length >= 4) {
+                detailCards[0].querySelector('p').textContent = "Party Started!";
+                detailCards[1].querySelector('p').textContent = "Today!";
+                detailCards[2].querySelector('p').textContent = "Now!";
+                detailCards[3].querySelector('p').innerHTML = "Join the Celebration!<br>At Grace A.G Church";
+            }
+        }
+        
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        
+        function initializePage() {
+            console.log('Initializing birthday celebration page...');
+            
+            document.querySelector('.birthday-name').textContent = CONFIG.birthdayBoy;
+            createAnimatedBackground();
+            initializePhotoSlideshow();
+            initializeBibleQuote();
+            updateCountdown();
+            countdownInterval = setInterval(updateCountdown, 1000);
+            
+            // Mobile optimizations
+            setupMobileOptimizations();
+            
+            console.log('Page initialization complete');
+        }
+        
+        function setupMobileOptimizations() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                console.log('Mobile device detected, applying optimizations');
+                
+                // Adjust image display for mobile
+                const photos = document.querySelectorAll('.birthday-photo');
+                photos.forEach(photo => {
+                    photo.style.objectFit = 'contain';
+                });
+                
+                // Reduce animation intensity
+                const animations = document.querySelectorAll('.floating-icon, .floating-star, .floating-balloon');
+                animations.forEach(el => {
+                    el.style.animationDuration = (parseFloat(getComputedStyle(el).animationDuration) * 1.5) + 's';
+                });
+            }
+        }
+        
+        // Start everything when page loads
+        document.addEventListener('DOMContentLoaded', initializePage);
+        
+        // ============================================
+        // EVENT HANDLERS
+        // ============================================
+        
+        // Interactive hover effects
+        document.querySelectorAll('.detail-card, .time-unit, .language-quote-card').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.05)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                if (!isCelebrationActive) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        });
+        
+        // Click effect
+        document.querySelector('.celebration-card').addEventListener('click', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+        
+        // Window resize handler
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (window.innerWidth <= 768) {
+                    const photos = document.querySelectorAll('.birthday-photo');
+                    photos.forEach(photo => {
+                        photo.style.objectFit = 'contain';
+                    });
+                }
+            }, 250);
+        });
+        
+        // Global error handling for images
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG' && e.target.classList.contains('birthday-photo')) {
+                console.log('Image failed to load:', e.target.src);
+                
+                // Don't replace backup images
+                if (!e.target.src.includes('unsplash')) {
+                    const index = Array.from(document.querySelectorAll('.birthday-photo')).indexOf(e.target);
+                    if (index !== -1 && BACKUP_IMAGES[index]) {
+                        e.target.src = BACKUP_IMAGES[index];
+                        e.target.onerror = null;
+                    }
+                }
+            }
+        }, true);
+        
+        // Page load completion
+        window.addEventListener('load', function() {
+            console.log('All resources loaded');
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
